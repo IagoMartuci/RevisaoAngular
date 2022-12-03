@@ -1,0 +1,79 @@
+<h1 class="my-3 text-primary">Cadastrar Produto</h1>
+<div class="card shadow">
+  <form class="m-3">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="nome">Nome do Produto: </label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Digite o nome do Produto"
+            name="nomeProduto"
+            [(ngModel)]="nome"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="categoria">Categoria do Produto: </label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Selecione a categoria do Produto"
+            list="categoria"
+            name="catgoriaProduto"
+            [(ngModel)]="categoria"
+          />
+          <datalist id="categoria">
+            <option value="EBOOK">EBOOK</option>
+            <option value="Fisíco">Fisíco</option>
+          </datalist>
+        </div>
+      </div>
+    </div>
+    <!--Fim row nome e categoria-->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="validade">Validade do Produto: </label>
+          <input
+            type="date"
+            class="form-control"
+            name="validadeProduto"
+            [(ngModel)]="validade"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="preco">Preço do Produto: </label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="0.00"
+            name="precoProduto"
+            [(ngModel)]="preco"
+          />
+        </div>
+      </div>
+    </div>
+    <!--Fim row validade e preço-->
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-warning" routerLink="/produtos">Voltar</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-success float-right" (click)="salvarProduto()">
+          Salvar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="card mt-3 shadow p-3">
+  <p>Nome: {{nome}}</p>
+  <p>Categoria: {{categoria}}</p>
+  <p>Validade: {{validade}}</p>
+  <p>Preço: {{preco}}</p>
+</div>
